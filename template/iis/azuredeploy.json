@@ -4,11 +4,11 @@
   "parameters": {
     "newVMName": {
       "type": "string",
-      "defaultValue": "IISlabhost"
+      "defaultValue": "labhost1"
     },
     "labName": {
       "type": "string",
-      "defaultValue": "testlab"
+      "defaultValue": "lab1"
     },
     "size": {
       "type": "string",
@@ -19,12 +19,7 @@
       "defaultValue": "labadmin"
     },
     "password": {
-      "type": "securestring",
-      "defaultValue": "[[[VmPassword]]"
-    },
-    "Configure_WinRM_hostName": {
-      "type": "string",
-      "defaultValue": "iislabhost"
+      "type": "securestring"
     }
   },
   "variables": {
@@ -60,15 +55,6 @@
           },
           {
             "artifactId": "[resourceId('Microsoft.DevTestLab/labs/artifactSources/artifacts', parameters('labName'), 'public repo', 'windows-chrome')]"
-          },
-          {
-            "artifactId": "[resourceId('Microsoft.DevTestLab/labs/artifactSources/artifacts', parameters('labName'), 'public repo', 'windows-winrm')]",
-            "parameters": [
-              {
-                "name": "hostName",
-                "value": "[parameters('Configure_WinRM_hostName')]"
-              }
-            ]
           }
         ],
         "labSubnetName": "[variables('labSubnetName')]",

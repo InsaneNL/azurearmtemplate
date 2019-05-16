@@ -30,12 +30,14 @@
             "metadata": {
                 "description": "SQL IaaS VM local administrator username"
             }
+            "defaultValue": "Labadmin"
         },
         "password": {
             "type": "securestring",
             "metadata": {
                 "description": "SQL IaaS VM local administrator password"
             }
+            "defaultValue": "Root1234"
         },
         "webSrvVMSize": {
             "type": "string",

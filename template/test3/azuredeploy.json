@@ -35,13 +35,7 @@
         "description": "Set this value for the VM Windows OS Version"
       }
     },
-    "appPublicIPDnsName": {
-      "type": "string",
-      "minLength": 1,
-      "metadata": {
-        "description": "Set this value for the dns name of the public ip"
-      }
-    },
+   
     "appDSCUpdateTagVersion": {
       "type": "string",
       "defaultValue": "1.0",

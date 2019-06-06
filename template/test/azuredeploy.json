@@ -133,9 +133,9 @@
         "frontEndIPConfigID": "[concat(variables('webLbId'),'/frontendIPConfigurations/LoadBalancerFrontEnd')]",
         "lbPoolID": "[concat(variables('webLbId'),'/backendAddressPools/BackendPool1')]",
         "lbProbeID": "[concat(variables('webLbId'),'/probes/tcpProbe')]",
-        "vmExtensionName": "dscExtension",
-        "modulesURL": "[concat(parameters('_artifactsLocation'), 'scripts/WebServerConfig.ps1.zip', parameters('_artifactsLocationSASToken'))]",
-        "configurationFunction": "WebServerConfig.ps1\\WebServerConfig"
+        #"vmExtensionName": "dscExtension",
+        #"modulesURL": "[concat(parameters('_artifactsLocation'), 'scripts/WebServerConfig.ps1.zip', parameters('_artifactsLocationSASToken'))]",
+        #"configurationFunction": "WebServerConfig.ps1\\WebServerConfig"
     },
     "resources": [
         {
@@ -587,36 +587,28 @@
                 }
             }
         },
-        {
-            "type": "Microsoft.Compute/virtualMachines/extensions",
-            "name": "[concat(variables('webSrvName'), copyindex(),'/', variables('vmExtensionName'))]",
-            "apiVersion": "2015-06-15",
-            "location": "[parameters('location')]",
-            "copy": {
-                "name": "webSrvMachineLoop",
-                "count": "[variables('webSrvNumbOfInstances')]"
-            },
-            "dependsOn": [
-                "[concat('Microsoft.Compute/virtualMachines/', variables('webSrvName'), copyindex())]"
+	    {
+    "apiVersion": "2018-06-01",
+    "type": "Microsoft.Compute/virtualMachines/extensions",
+    "name": "[concat(variables('vmName'),'/', 'InstallWebServer')]",
+    "location": "[parameters('location')]",
+    "dependsOn": [
+        "[concat('Microsoft.Compute/virtualMachines/',variables('vmName'))]"
+    ],
+    "properties": {
+        "publisher": "Microsoft.Compute",
+        "type": "CustomScriptExtension",
+        "typeHandlerVersion": "1.7",
+        "autoUpgradeMinorVersion":true,
+        "settings": {
+            "fileUris": [
+                "https://armtutorials.blob.core.windows.net/usescriptextensions/installWebServer.ps1"
             ],
-            "tags": {
-                "displayName": "VM Extensions"
-            },
-            "properties": {
-                "publisher": "Microsoft.Powershell",
-                "type": "DSC",
-                "typeHandlerVersion": "2.19",
-                "autoUpgradeMinorVersion": true,
-                "settings": {
-                    "ModulesUrl": "[variables('modulesUrl')]",
-                    "SasToken": "",
-                    "ConfigurationFunction": "[variables('configurationFunction')]",
-                    "wmfVersion": "4.0",
-                    "Properties": {}
-                },
-                "protectedSettings": {}
-            }
-		}
+            "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File installWebServer.ps1"
+        }
+    }
+}
+        
         
     ]
 }

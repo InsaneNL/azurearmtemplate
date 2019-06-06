@@ -7,7 +7,7 @@
             "metadata": {
                 "description": "The base URI gwhere artifacts required by this template are located. When the template is deployed using the accompanying scripts, a private location in the subscription will be used and this value will be automatically generated."
             },
-            "defaultValue": "https://raw.githubusercontent.com/InsaneNL/azurearmtemplate/"
+            "defaultValue": "https://raw.githubusercontent.com/InsaneNL/azurearmtemplate/master/template/test/"
         },
         "_artifactsLocationSasToken": {
             "type": "securestring",
@@ -133,7 +133,7 @@
         "frontEndIPConfigID": "[concat(variables('webLbId'),'/frontendIPConfigurations/LoadBalancerFrontEnd')]",
         "lbPoolID": "[concat(variables('webLbId'),'/backendAddressPools/BackendPool1')]",
         "lbProbeID": "[concat(variables('webLbId'),'/probes/tcpProbe')]",
-       	"vmExtensionName": "dscExtension",
+        "vmExtensionName": "dscExtension",
         "modulesURL": "[concat(parameters('_artifactsLocation'), 'scripts/WebServerConfig.ps1.zip', parameters('_artifactsLocationSASToken'))]",
         "configurationFunction": "WebServerConfig.ps1\\WebServerConfig"
     },
@@ -587,7 +587,6 @@
                 }
             }
         },
-	
         {
             "type": "Microsoft.Compute/virtualMachines/extensions",
             "name": "[concat(variables('webSrvName'), copyindex(),'/', variables('vmExtensionName'))]",

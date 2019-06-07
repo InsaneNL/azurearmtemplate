@@ -134,7 +134,7 @@
         "lbPoolID": "[concat(variables('webLbId'),'/backendAddressPools/BackendPool1')]",
         "lbProbeID": "[concat(variables('webLbId'),'/probes/tcpProbe')]",
         "vmExtensionName": "dscExtension",
-        "modulesURL": "[concat(parameters('_artifactsLocation'), '/scripts/WebServerConfig.ps1.zip', parameters('_artifactsLocationSASToken'))]",
+        "modulesURL": "[concat(parameters('_artifactsLocation'), 'scripts/WebServerConfig.ps1.zip', parameters('_artifactsLocationSASToken'))]",
         "configurationFunction": "WebServerConfig.ps1\\WebServerConfig"
     },
     "resources": [

@@ -638,7 +638,8 @@
               ],
               "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -file ConfigureWinRM.ps1 ',variables('hostDNSNameScriptArgument'))]"
             }
-	   
-        
+	  
+	]
+	  }
     ]
 }

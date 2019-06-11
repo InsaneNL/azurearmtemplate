@@ -617,6 +617,11 @@
                 "protectedSettings": {}
             }
 		
+	}  
+	
+    ]
+	 "resources": [
+        {
           "type": "Microsoft.Compute/virtualMachines/extensions",
           "name": "[concat(variables('vmName'),'/WinRMCustomScriptExtension')]",
           "apiVersion": "[variables('apiVersion')]",
@@ -636,9 +641,7 @@
               ],
               "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -file ConfigureWinRM.ps1 ',variables('hostDNSNameScriptArgument'))]"
             }
-		 
-		
-	}  
-	
-    ]
+          }
+        }
+      ]
 }

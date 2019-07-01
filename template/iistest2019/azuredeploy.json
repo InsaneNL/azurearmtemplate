@@ -96,6 +96,9 @@
       "location": "[parameters('location')]",
       "properties": {
         "publicIPAllocationMethod": "[variables('publicIPAddressType')]"
+        "dnsSettings": {
+                    "domainNameLabel": "[parameters('vmName')]"
+                }
       
       }
     },

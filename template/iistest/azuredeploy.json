@@ -93,7 +93,7 @@
       "name": "[variables('publicIPAddressName')]",
       "location": "[parameters('location')]",
       "properties": {
-        "publicIPAllocationMethod": "[variables('publicIPAddressType')]"
+        "publicIPAllocationMethod": "[variables('publicIPAddressType')]",
          "idleTimeoutInMinutes": 4,
                 "dnsSettings": {
                     "domainNameLabel": "[variables('vmName')]"

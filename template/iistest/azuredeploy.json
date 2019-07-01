@@ -97,7 +97,7 @@
          "idleTimeoutInMinutes": 4,
                 "dnsSettings": {
                     "domainNameLabel": "[variables('vmName')]"
-       
+      }
       }
     },
     {

@@ -96,7 +96,7 @@
         "publicIPAllocationMethod": "[variables('publicIPAddressType')]",
          "idleTimeoutInMinutes": 4,
                 "dnsSettings": {
-                    "domainNameLabel": "[variables('vmName')]"
+                    "domainNameLabel": "[parameters('vmName')]"
       }
       }
     },

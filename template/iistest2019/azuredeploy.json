@@ -39,7 +39,7 @@
     },
     "ouPath": {
       "type": "string",
-      "defaultValue": "OU=computers; DC=t-vision; DC=public\",
+      "defaultValue": "OU=computers; DC=t-vision; DC=public",
       "metadata": {
         "description": "Specifies an organizational unit (OU) for the domain account. Enter the full distinguished name of the OU in quotation marks. Example: \"OU=testOU; DC=domain; DC=Domain; DC=com\""
       }

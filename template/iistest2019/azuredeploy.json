@@ -131,7 +131,7 @@
   "variables": {
 	"subnetRef": "[resourceId(parameters('existingVirtualNetworkResourceGroup'), 'Microsoft.Network/virtualNetworks/subnets', parameters('existingVirtualNetworkName'),  parameters('subnetName'))]",
 
-    "nicName": "dscNIC",
+    "nicName": "[concat(parameters('dnsLabelPrefix'),'Nic')]",
     "imagePublisher": "MicrosoftWindowsServer",
     "imageOffer": "WindowsServer",
     "vmExtensionName": "dscExtension"

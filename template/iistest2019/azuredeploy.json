@@ -202,7 +202,7 @@
               "privateIPAllocationMethod": "Dynamic",
               "subnet": {
                 "id": "[resourceId(parameters('virtualNetworkResourceGroupName'), 'Microsoft.Network/virtualNetworks/subnets/', parameters('virtualNetworkName'), parameters('subnetName'))]"
-              
+	      }
           }
         ]
       }

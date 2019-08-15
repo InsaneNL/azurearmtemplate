@@ -256,8 +256,7 @@
 	"dependsOn": [
         "[concat('Microsoft.Compute/virtualMachines/', parameters('dnsLabelPrefix'))]"
       ],      
-      }
-	}
+      
     },
         {
           "type": "Microsoft.Compute/virtualMachines/extensions",

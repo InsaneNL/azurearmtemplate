@@ -177,7 +177,8 @@
         "osProfile": {
           "computerName": "[parameters('dnsLabelPrefix')]",
           "adminUsername": "[parameters('adminUsername')]",
-          "adminPassword": "[parameters('adminPassword')]"
+          "adminPassword": "[parameters('adminPassword')]",
+	  "windowsConfiguration": { "timeZone": "W. Europe Standard Time" }
         },
         "storageProfile": {
           "imageReference": {

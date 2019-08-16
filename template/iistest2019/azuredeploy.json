@@ -228,9 +228,9 @@
       }
     }
      
-  ]
+  
 },
-"resources": [
+
 	{
       "type": "Microsoft.Compute/virtualMachines/extensions",
       "name": "[concat(parameters('dnsLabelPrefix'),'/joindomain')]",
